@@ -5,8 +5,6 @@
 ## Team Members
 > Millard Cil
 
- 
-
 > Ronny Kpa
 
  
@@ -17,15 +15,14 @@
 
 ## App Functions
 1. Customer (the user with the customer role):
-    1. Create/modify customer profile - <how will your app do this?>
-    2. View available services - <how will your app do this?>.
-    3. Subscribe to available services - <how will your app do this?>.
-    4. Write reviews for subscribed services - <how will your app do this?>.
+    1. Create/modify customer profile - Register as a customer and display contact information on profile.
+    2. View available services - Browse cleaning providers by price, location, availability and job type: residential or commerical.
+    3. Subscribe to available services - Book one time or reoccuring services with select providers.
+    4. Write reviews for subscribed services - Leave feedback on quality of service: cleaning, punctuality, meeting deadlines and professionalism.
 
 2. Provider (Cleaner/ Cleaning Company):
     1. Register as a independent cleaner or company, showcase experience, pricing, and contact/location information
     2. Create services - Publish quotes and availability.
     3. View customer statistics -  View client constraints, location, client ratings/feedback given to other services, and total number of customers on platform
     4. Reply to reviews - Respond to customer feedback.
-
 
