@@ -83,47 +83,37 @@
     Then  I should receive a confirmation of the cancelled appointment, removing the booking
     AND I can view the cancellation on my customer profile dashboard
   ```
-
-### 2.2 Provider Stories
-- **US-20 — <short title>**  
-  _Story:_ As a provider, I want … so that …  
+  
+### 2.2 Provider (Cleaner) Stories
+- **US-20 — Create and update cleaner profile**  
+  _Story:_ As a cleaner, I want to create and update my profile so that I can attract clients.  
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: Create and update cleaner profile
+    Given I do not have a profile
+    When  I provide my details and submit the form
+    Then  my profile should be created 
+    And   the profile should be visible to customers
   ```
 
-- **US-21 — <short title>**  
-  _Story:_ As a provider, I want … so that …  
+- **US-21 — Define services and pricing**  
+  _Story:_ As a cleaner, I want to define my services and pricing so that customers understand my offerings.
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: Define services and pricing 
+    Given I am logged in as a cleaner
+    When  I add my services and set pricing 
+    Then  the services should be saved, visible and understood to customers
   ```
 
-### 2.3 SysAdmin Stories
-- **US‑30 — <short title>**  
-  _Story:_ As a sysadmin, I want … so that …  
+- **US‑30 — Cancel appointments**  
+  _Story:_ As a cleaner, I want to cancel appointments so that I can focus on other appointments  
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
-  ```
-
-- **US‑31 — <short title>**  
-  _Story:_ As a sysadmin, I want … so that …  
-  _Acceptance:_
-  ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: Cancel appointments
+    Given I am logged in as a cleaner
+    When  I am offered an appointment that is out of my scope or doesn't seem worth pursuing 
+    Then  I should be able to cancel the appointment 
   ```
 
 ---
