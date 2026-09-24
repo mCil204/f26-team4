@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page | CleanSweep</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+  <header>
+    <nav class="navbar navbar-expand site-nav" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">CleanSweep</a>
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a class="btn btn-outline-primary" href="Customer/createCustomerProfile.html">Create Profile</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-grow-1">
+    <div class="container py-5">
+      <div class="card mx-auto" style="max-width: 400px;">
+        <div class="p-4 p-md-5">
+          <h1 class="h3 fw-bold mb-4">Welcome Back</h1>
+
+          <form action="index.html" method="get">
+            <div class="mb-3">
+              <label for="login-email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="login-email" name="login-email" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="login-password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="login-password" required>
+            </div>
+            <a class="btn btn-primary btn-lg w-100 mt-2" href="Customer/profileCustomer.html">Login as Customer</a>
+            <a class="btn btn-outline-dark btn-lg w-100 mt-2" href="Provider/login.html">Login as Provider</a>
+          </form>
+
+          <p class="mt-4 mb-1 text-center"><a href="#">Forgot your password?</a></p>
+          <p class="mb-0 text-center text-body-secondary">
+            New here? <a href="Customer/createCustomerProfile.html">Create a profile</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer py-5">
+      <p class="mb-0 small text-center">
+        &copy; 2026 CleanSweep. All rights reserved. For Educational Purposes Only.
+      </p>
+  </footer>
+
+</body>
+
+</html>
