@@ -1,0 +1,97 @@
+<!DOCTYPE html> 
+
+<html> 
+
+  <head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaner Information</title> 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  </head> 
+
+  <body> 
+ <body class="d-flex flex-column min-vh-100">
+    <header>
+    <nav class="navbar navbar-expand site-nav" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">CleanSweep</a>
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item"><a class="nav-link"  href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="dashboard.html">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">Info</a></li>
+            <li class="nav-item"><a class="nav-link" href="info.html">Browse</a></li>
+          </ul>
+          <div class="d-flex gap-2">
+            <a class="btn btn-primary" href="info.html">profile</a>
+            <a class="btn btn-outline-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="container">
+        <h2>Cleaner Information</h2>
+        <div>
+          <label>Email:</label>
+          <p id="newEmail">SnokeJon74@gmail.com</p>
+        </div>
+        <div>
+          <label>First Name</label>
+          <p>Jon </p>
+        </div>
+        <div>
+          <label>Last Name</label>
+          <p>Snoke </p>
+        </div>
+        <div>
+          <label>Business Name</label>
+          <p>Jons' Cleaning Service</p>
+        </div>
+        <div>
+          <label>Location</label>
+          <p>Winston-Salem </p>
+        </div>
+        <div>
+          <label>Hourly rate</label>
+          <p>$60</p>
+        </div>
+        <div>
+          <label>Specialties</label>
+          <p>Pet-friendly</p>
+        </div>
+        <div>
+          <label>Schedule</label>
+          <p>Monday-Friday, 9am-6pm</p>
+        </div>
+         <button class="btn btn-primary-outline" onclick="editInfo()">edit</button>
+      </div>
+    </section>
+
+
+
+      
+  </main>
+  
+<script>
+  function editInfo(){
+    
+        
+const node = document.createTextNode("SnokeJon74@gmail.com");
+para.appendChild(node);
+
+const element = document.getElementById("newEmail");
+element.appendChild(para);
+
+    }
+</script>
+    
+
+  
+
+  </body> 
+
+</html> 
