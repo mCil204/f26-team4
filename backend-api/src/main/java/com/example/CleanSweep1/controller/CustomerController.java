@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.CleanSweep1.dto.LoginRequest;
 import com.example.CleanSweep1.entity.Customer;
 import com.example.CleanSweep1.service.CustomerService;
 
@@ -40,4 +41,10 @@ public class CustomerController {
     public Customer update(@PathVariable Long id, @Valid @RequestBody Customer customer) {
         return customerService.update(id, customer);
     }
+
+    @PostMapping("/login")
+    public Customer login(@Valid @RequestBody LoginRequest request) {
+        return customerService.login(request.email(), request.password());
+    }
+    
 }
