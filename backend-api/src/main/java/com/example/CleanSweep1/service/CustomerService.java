@@ -17,9 +17,13 @@ public class CustomerService {
     }
 
     public Customer create(Customer customer) {
-        customer.setCustomerId(null); // make sure the DB generates the ID
-        return customerRepository.save(customer);
+    if (customerRepository.existsByEmail(customer.getEmail())) {
+        throw new ResponseStatusException(
+                HttpStatus.CONFLICT, "Email already in use");
     }
+    customer.setCustomerId(null);
+    return customerRepository.save(customer);
+}
 
     public Customer getById(Long id) {
         return customerRepository.findById(id)
@@ -27,12 +31,28 @@ public class CustomerService {
                         HttpStatus.NOT_FOUND, "Customer not found"));
     }
 
+    public Customer login(String email, String password) {
+        Customer customer = customerRepository.findByEmail(email)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.UNAUTHORIZED, "Invalid email or password"));
+        if (!customer.getPassword().equals(password)) {
+            throw new ResponseStatusException(
+                    HttpStatus.UNAUTHORIZED, "Invalid email or password");
+        }
+        return customer;
+    }
+
     public Customer update(Long id, Customer updated) {
-        Customer existing = getById(id); // throws 404 if missing
-        existing.setName(updated.getName());
+        Customer existing = getById(id); 
+        existing.setFirstName(updated.getFirstName());
+        existing.setLastName(updated.getLastName());
         existing.setEmail(updated.getEmail());
+        existing.setPassword(updated.getPassword());
         existing.setPhone(updated.getPhone());
-        existing.setAddress(updated.getAddress());
+        existing.setStreet(updated.getStreet());
+        existing.setCity(updated.getCity());
+        existing.setState(updated.getState());
+        existing.setZip(updated.getZip());
         return customerRepository.save(existing);
     }
 }
