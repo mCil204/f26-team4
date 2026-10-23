@@ -28,6 +28,9 @@ public class Cleaner {
     @Email(message = "Email must be valid")
     private String email;
 
+    @NotBlank (message = "password is required")
+    private String password;
+
      @NotBlank(message = "business name is required")
     private String businessName;
 
@@ -79,5 +82,7 @@ public class Cleaner {
     public void setHourlyRate(double hourlyRate) { this.hourlyRate = hourlyRate; }
     public Availability getAvailability() { return availability; }
     public void setAvailability(Availability availability) { this.availability = availability; }
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 }
 
