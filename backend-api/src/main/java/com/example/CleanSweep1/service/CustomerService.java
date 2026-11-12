@@ -43,11 +43,17 @@ public class CustomerService {
     }
 
     public Customer update(Long id, Customer updated) {
-        Customer existing = getById(id); 
+        Customer existing = getById(id);
+        if (!existing.getEmail().equalsIgnoreCase(updated.getEmail())
+                && customerRepository.existsByEmail(updated.getEmail())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Email already in use");
+        }
         existing.setFirstName(updated.getFirstName());
         existing.setLastName(updated.getLastName());
         existing.setEmail(updated.getEmail());
-        existing.setPassword(updated.getPassword());
+        if (updated.getPassword() != null && !updated.getPassword().isBlank()) {
+            existing.setPassword(updated.getPassword());
+        }
         existing.setPhone(updated.getPhone());
         existing.setStreet(updated.getStreet());
         existing.setCity(updated.getCity());
